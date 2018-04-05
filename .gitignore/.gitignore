@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $.get('https://api.blockcypher.com/v1/btc/test3/addrs/mp7FUTdo67MxNJpTUP1EqKGwjkLMJg5Eps/balance')
+                .then(function(d) {console.log(d);});
+        var newtx = {
+                inputs: [{addresses: ['mp7FUTdo67MxNJpTUP1EqKGwjkLMJg5Eps']}],
+                outputs: [{addresses: ['myMErCQHJF9bn3EhbqPxPtvUEqzBkCJYXY'], value: 100000}]
+            
+            };
+            $.post('https://api.blockcypher.com/v1/btc/test3/txs/new', JSON.stringify(newtx))
+            .then(function(d) {console.log(d);});
+    
+            });
+         
+        </script>
+    </head>
+    <body>
+    </body>    
+</html>
